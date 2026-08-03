@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Support • Mina</title>
+
+    <style>
+      :root {
+        --primary: #3563e9;
+        --primary-light: #4a78ff;
+        --background: #f5f7fb;
+        --surface: #ffffff;
+        --text: #202124;
+        --sub: #6b7280;
+        --border: #e4e7ec;
+        --success: #27ae60;
+        --radius: 18px;
+        --shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: #111827;
+          --surface: #1d2433;
+          --text: #ffffff;
+          --sub: #b8c0cc;
+          --border: #2b3445;
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          Inter,
+          system-ui,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      a,
+      a:visited,
+      a:hover,
+      a:active {
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 24px;
+      }
+
+      .hero {
+        padding: 80px 24px;
+        text-align: center;
+      }
+
+      .logo {
+        width: 90px;
+        height: 90px;
+        margin: auto;
+
+        background: linear-gradient(135deg, var(--primary), #7d4cff);
+
+        border-radius: 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 40px;
+        color: white;
+
+        box-shadow: var(--shadow);
+      }
+
+      .hero h1 {
+        margin-top: 28px;
+        font-size: 3rem;
+      }
+
+      .hero p {
+        margin-top: 18px;
+        font-size: 1.15rem;
+        color: var(--sub);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+
+        margin-top: 50px;
+      }
+
+      .card {
+        background: var(--surface);
+        padding: 30px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: var(--sub);
+      }
+
+      .section {
+        margin-top: 80px;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .faq {
+        background: var(--surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .question {
+        padding: 22px 24px;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-weight: 600;
+      }
+
+      .answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.35s ease;
+
+        padding: 8px 24px 0 24px;
+
+        color: var(--sub);
+      }
+
+      .answer p {
+        padding-bottom: 22px;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      @media (max-width: 700px) {
+        .contact {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 2.3rem;
+        }
+      }
+
+      .contact-card {
+        background: var(--surface);
+        padding: 30px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 24px;
+
+        background: var(--primary);
+        color: white;
+
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+
+        transition: 0.3s;
+      }
+
+      .button:hover {
+        background: var(--primary-light);
+      }
+
+      footer {
+        margin: 80px 0 30px;
+        text-align: center;
+        color: var(--sub);
+      }
+
+      small {
+        display: block;
+        margin-top: 8px;
+      }
+
+      .badge {
+        display: inline-block;
+
+        padding: 8px 14px;
+        border-radius: 30px;
+
+        background: #eef4ff;
+        color: var(--primary);
+
+        font-weight: 600;
+
+        margin-top: 20px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .badge {
+          background: #29344c;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="hero">
+        <img src="images/mina-icon.png" alt="ghs Icon" class="logo" />
+
+        <div class="badge">Support Center</div>
+
+        <h1>How can we help?</h1>
+
+        <p>
+          Welcome to the support page for
+          <strong>Mina</strong>. If you're experiencing any issues, have
+          questions, or would like to suggest new features, we'd love to hear
+          from you.
+        </p>
+      </section>
+
+      <div class="cards">
+        <div class="card">
+          <h3>🎵 Audio Problems</h3>
+
+          <p>
+            If subject audio isn't playing, ensure the audio has been downloaded
+            or you are connected to the internet and your device isn't muted.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>📖 Missing Content</h3>
+
+          <p>
+            If content appears missing, refresh cache or update to the latest
+            version available in the app store.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>💡 Suggestions</h3>
+
+          <p>
+            We continually improve the app. Send us your ideas and feature
+            requests.
+          </p>
+        </div>
+      </div>
+
+      <section class="section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+          <div class="question">
+            <span>Is an internet connection required?</span>
+            <span>+</span>
+          </div>
+
+          <div class="answer">
+            <p>
+              Yes, an internet connection is required to sync with the server.
+            </p>
+          </div>
+
+          <div class="question">
+            <span>How do I report a bug?</span>
+            <span>+</span>
+          </div>
+
+          <div class="answer">
+            <p>
+              Please send us an email describing the issue, your device model,
+              operating system version, and steps to reproduce it.
+            </p>
+          </div>
+
+          <div class="question">
+            <span>Can I request a feature?</span>
+            <span>+</span>
+          </div>
+
+          <div class="answer">
+            <p>
+              Yes. We welcome suggestions for features and improvements. While
+              we can't guarantee every request, we review all feedback.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Contact Support</h2>
+
+        <div class="contact">
+          <div class="contact-card">
+            <h3>Email Support</h3>
+
+            <p>
+              Need help? Send us an email and we'll respond as soon as possible.
+            </p>
+
+            <a
+              class="button"
+              href="mailto:devjckennedy@gmail.com?subject=Support%20Request - Mina">
+              Send Email
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Helpful Links</h3>
+
+            <p>Visit the links below for more information.</p>
+
+            <p style="margin-top: 24px">
+              <a href="privacy.html">Privacy Policy</a>
+            </p>
+
+            <p>
+              <a href="terms.html">Terms of Use</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <strong>Mina</strong>
+
+        <small>
+          Thank you for using our app. We're committed to providing a reliable
+          experience and continually improving it based on your feedback.
+        </small>
+      </footer>
+    </div>
+
+    <script>
+      document.querySelectorAll(".question").forEach((q) => {
+        q.onclick = () => {
+          const answer = q.nextElementSibling;
+          const open = answer.style.maxHeight;
+
+          document
+            .querySelectorAll(".answer")
+            .forEach((a) => (a.style.maxHeight = null));
+
+          document
+            .querySelectorAll(".question span:last-child")
+            .forEach((s) => (s.textContent = "+"));
+
+          if (!open) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+            q.querySelector("span:last-child").textContent = "−";
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
